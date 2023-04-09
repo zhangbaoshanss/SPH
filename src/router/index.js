@@ -11,22 +11,31 @@ import Register from "@/pages/Register"
 // 配置路由
 export default new VueRouter({
     // 配置路由
-    routes:[
+    routes: [
         {
-            path:"/home",   // 主页
-            component:Home
+            path: "/home",   // 主页
+            component: Home,
+            meta: { show: true }
         },
         {
-            path:"/search", // 搜索
-            component:Search
+            path: "/search/:keyword?", // 搜索
+            component: Search,
+            meta: { show: true },
+            name: "search"
         },
         {
-            path:"/login",  // 登录
-            component:Login
+            path: "/login",  // 登录
+            component: Login,
+            meta: { show: false }
         },
         {
-            path:"/register",   // 注册
-            component:Register
+            path: "/register",   // 注册
+            component: Register,
+            meta: { show: false }
         },
+        {
+            path: "*",
+            redirect: "/Home"
+        }
     ]
 })

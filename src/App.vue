@@ -3,7 +3,8 @@
     <Header></Header>
     <!-- 路由组件出口 -->
     <router-view></router-view>
-    <Footer></Footer>
+    <!-- <Footer v-show="$route.path == '/home' || $route.path == '/search'"></Footer> -->
+    <Footer v-show="$route.meta.show"></Footer>
   </div>
 </template>
 
@@ -14,11 +15,9 @@ import Footer from './components/Footer'
 export default {
   name: 'App',
   components: {
-    Header,Footer
+    Header, Footer
   }
 }
 </script>
 
-<style>
-
-</style>
+<style></style>
